@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#10121e">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>AWS Field</title>
+<link rel="icon" href="/field.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/field.svg">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/" aria-label="AWS Field home"><img src="/field.svg" alt=""><span>AWS <b>Field</b></span></a>
+  <button class="workspace-button" id="workspace" title="Switch diagrams"><span id="diagram-title">Ohio web lab</span><span aria-hidden="true">⌄</span></button>
+  <span class="save-state" id="save-state" role="status"><i></i><span>Loading</span></span>
+</header>
+<main class="layout">
+  <section class="viewport" aria-label="3D architecture diagram">
+    <canvas id="scene" aria-label="Interactive architecture. Use the resource list for keyboard selection."></canvas>
+    <div id="labels"></div>
+    <div class="scene-info"><span class="eyebrow">ARCHITECTURE</span><strong id="scene-title">Ohio web lab</strong><span id="summary"></span></div>
+    <div class="view-controls" aria-label="Camera controls"><button id="fit" aria-label="Fit diagram" title="Fit diagram">⛶</button><button id="zoom-in" aria-label="Zoom in">+</button><button id="zoom-out" aria-label="Zoom out">−</button><button id="rotate" aria-label="Rotate view">↻</button></div>
+    <div class="scene-footer"><span>Drag to orbit <b>·</b> Pinch to zoom</span><span id="engine"></span></div>
+    <div id="placement-bar" hidden></div>
+  </section>
+  <aside class="panel" aria-label="Diagram controls">
+    <div class="panel-handle" aria-hidden="true"></div>
+    <nav class="tabs" aria-label="Diagram tools"><button data-tab="add" aria-selected="true"><b>＋</b> Add</button><button data-tab="resources" aria-selected="false"><b>☷</b> Resources</button><button data-tab="details" aria-selected="false"><b>◈</b> Details</button><button data-tab="simulate" aria-selected="false">Simulate</button><button data-tab="practice" aria-selected="false">Labs</button></nav>
+    <div class="panel-body" id="panel-body"></div>
+  </aside>
+</main>
+<div class="notice" id="notice" role="status" hidden></div>
+<dialog id="dialog" aria-label="Diagrams"></dialog>
+<input type="file" id="import-file" accept=".json,application/json" hidden>
+<script type="module" src="/app.mjs"></script>
+</body>
+</html>
